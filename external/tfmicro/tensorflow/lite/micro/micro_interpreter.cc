@@ -180,6 +180,11 @@ TfLiteStatus MicroInterpreter::PrepareNodeAndRegistrationDataFromFlatbuffer() {
 }
 
 TfLiteStatus MicroInterpreter::AllocateTensors() {
+  #if defined(CMSIS_NN)
+  MicroPrintf("^^^^^^^^^^^^^^^^^^^[CMSIS_NN--> Interpreter.CC \n");
+  #else
+  MicroPrintf("^^^^^^^^^^^^^^^^^^^[NOT DEFINED CMSIS_NN--> Interpreter.CC \n");
+  #endif
   SubgraphAllocations* allocations = allocator_.StartModelAllocation(model_);
 
   if (allocations == nullptr) {

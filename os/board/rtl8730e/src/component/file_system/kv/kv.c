@@ -16,6 +16,7 @@ extern size_t fread(void *ptr, size_t size, size_t count, FILE *stream);
 
 
 static char *prefix;
+char lfs_mount_fail = 0;
 int rt_kv_init(void)
 {
 	int ret = -1;
