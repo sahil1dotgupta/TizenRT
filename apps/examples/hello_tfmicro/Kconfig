@@ -6,7 +6,7 @@
 config EXAMPLES_HELLO_TFMICRO
 	bool "\"Hello, Tensorflow Lite Micro!\" C++ example"
 	default n
-	depends on HAVE_CXXINITIALIZE && EXTERNAL_TFMICRO
+	depends on EXTERNAL_TFMICRO && ((HAVE_CXXINITIALIZE && BUILD_FLAT) || (!HAVE_CXXINITIALIZE && !BUILD_FLAT))
 	---help---
 		Enable the \"Hello, Tensorflow Lite Micro!\" C++ example
 

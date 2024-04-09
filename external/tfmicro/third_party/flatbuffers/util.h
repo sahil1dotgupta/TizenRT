@@ -291,7 +291,9 @@ inline bool StringToIntegerImpl(T *val, const char *const str,
     // if a prefix not match, try base=10
     return StringToIntegerImpl(val, str, 10, check_errno);
   } else {
-    if (check_errno) errno = 0;  // clear thread-local errno
+    /* No direct access to errno in loabable binary */
+    /* if (check_errno) errno = 0;  // clear thread-local errno */
+    if (check_errno) set_errno(0);  // clear thread-local errno
     auto endptr = str;
     strtoval_impl(val, str, const_cast<char **>(&endptr), base);
     if ((*endptr != '\0') || (endptr == str)) {

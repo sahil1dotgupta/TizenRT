@@ -22,7 +22,7 @@ namespace tflite {
 AllOpsResolver::AllOpsResolver() {
   // Please keep this list of Builtin Operators in alphabetical order.
   // AddAbs();
-  // AddAdd();
+  AddAdd();
   // AddAddN();
   // AddArgMax();
   // AddArgMin();
@@ -36,7 +36,7 @@ AllOpsResolver::AllOpsResolver() {
   // AddCeil();
   // AddCircularBuffer();
   // AddConcatenation();
-  // AddConv2D();
+  AddConv2D();
   // AddCos();
   // AddCumSum();
   // AddDepthToSpace();
@@ -76,7 +76,7 @@ AllOpsResolver::AllOpsResolver() {
   // AddMean();
   // AddMinimum();
   // AddMirrorPad();
-  // AddMul();
+  AddMul();
   // AddNeg();
   // AddNotEqual();
   // AddPack();

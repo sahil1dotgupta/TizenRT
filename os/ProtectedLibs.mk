@@ -88,6 +88,11 @@ ifeq ($(CONFIG_ENABLE_IOTIVITY),y)
 USERLIBS += $(LIBRARIES_DIR)$(DELIM)libiotivity$(LIBEXT)
 endif
 
+# Add CMSIS_NN library
+ifeq ($(CONFIG_EXTERNAL_CMSIS_NN),y)
+USERLIBS += $(LIBRARIES_DIR)$(DELIM)$(CMSIS_NN_LIB)$(LIBEXT)
+endif # CONFIG_EXTERNAL_CMSIS_NN
+
 # Add library for application support.
 USERLIBS += $(LIBRARIES_DIR)$(DELIM)libapps$(LIBEXT)
 
