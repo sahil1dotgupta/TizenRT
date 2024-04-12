@@ -99,6 +99,11 @@ ifeq ($(CONFIG_ENABLE_IOTIVITY),y)
 TINYARALIBS += $(LIBRARIES_DIR)$(DELIM)libiotivity$(LIBEXT)
 endif
 
+# Add CMSIS_NN library
+ifeq ($(CONFIG_EXTERNAL_CMSIS_NN),y)
+TINYARALIBS += $(LIBRARIES_DIR)$(DELIM)$(CMSIS_NN_LIB)$(LIBEXT)
+endif # CONFIG_EXTERNAL_CMSIS_NN
+
 # Add libraries for power management module
 
 ifeq ($(CONFIG_PM),y)

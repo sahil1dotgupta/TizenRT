@@ -1,0 +1,19 @@
+#
+# For a description of the syntax of this configuration file,
+# see kconfig-language at https://www.kernel.org/doc/Documentation/kbuild/kconfig-language.txt
+#
+
+config EXTERNAL_CMSIS_NN
+	bool "CMSIS NN library"
+	default n
+	---help---
+		Enables the CMSIS_NN library
+
+if EXTERNAL_CMSIS_NN
+config CMSIS_NN_LIB_DIRECTORY_NAME
+	string "Library directory name (rtl8721csm || rtl8730e)"
+	default "rtl8721csm"
+	---help---
+		Enter name of directory which contains library files
+endif #if EXTERNAL_CMSIS_NN
+
