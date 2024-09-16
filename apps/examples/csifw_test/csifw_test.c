@@ -133,67 +133,70 @@ int csifw_test_main(void)
 		return 0;
 	}
 	printf("[APP]: CSI Manager START SUCCESS\n");
-	printf("[APP]: SLEEP--> 15 seconds\n");
+	// printf("[APP]: SLEEP--> 15 seconds\n");
 	PRNT_LN2;
-	sleep(15);
+	while (1) {
+		sleep(2);
+	}
+	// sleep(15);
 	
-	PRNT_LN3;
-	printf("[APP]: csi_service_stop\n");
-	PRNT_LN2;
-	sleep(2);
-	CSIFW_REASON reason = CSIFW_NORMAL;
+	// PRNT_LN3;
+	// printf("[APP]: csi_service_stop\n");
+	// PRNT_LN2;
+	// sleep(2);
+	// CSIFW_REASON reason = CSIFW_NORMAL;
 	
-	if (csi_service_stop(reason)== CSIFW_ERROR) {
-		printf("[APP]: CSI Manager STOP FAIL\n");
-		PRNT_LN2;
-		return 0;
-		}
-	printf("[APP]: CSI Manager STOP SUCCESS\n");
-	printf("[APP]: SLEEP--> 10 seconds\n");
-	PRNT_LN2;
-	sleep(10);
+	// if (csi_service_stop(reason)== CSIFW_ERROR) {
+	// 	printf("[APP]: CSI Manager STOP FAIL\n");
+	// 	PRNT_LN2;
+	// 	return 0;
+	// 	}
+	// printf("[APP]: CSI Manager STOP SUCCESS\n");
+	// printf("[APP]: SLEEP--> 10 seconds\n");
+	// PRNT_LN2;
+	// sleep(10);
 
-	PRNT_LN3;
-	printf("[APP]: csi_service_start\n");
-	PRNT_LN2;
-	sleep(2);
-	if (csi_service_start() == CSIFW_ERROR) {
-		printf("[APP]: CSI Manager START FAIL\n");
-		PRNT_LN2;
-		return 0;
-	}
-	printf("[APP]: SLEEP--> 20 seconds\n");
-	PRNT_LN2;
-	sleep(20);
+	// PRNT_LN3;
+	// printf("[APP]: csi_service_start\n");
+	// PRNT_LN2;
+	// sleep(2);
+	// if (csi_service_start() == CSIFW_ERROR) {
+	// 	printf("[APP]: CSI Manager START FAIL\n");
+	// 	PRNT_LN2;
+	// 	return 0;
+	// }
+	// printf("[APP]: SLEEP--> 20 seconds\n");
+	// PRNT_LN2;
+	// sleep(20);
 
-	PRNT_LN3;
-	printf("[APP]: csi_service_stop\n");
-	PRNT_LN2;
-	sleep(2);
-	if (csi_service_stop(reason) == CSIFW_ERROR) {
-		printf("[APP]: CSI Manager STOP FAIL\n");
-		PRNT_LN2;
-		return 0;
-	}
-	printf("[APP]: SLEEP--> 10 seconds\n");
-	PRNT_LN2;
-	sleep(10);
+	// PRNT_LN3;
+	// printf("[APP]: csi_service_stop\n");
+	// PRNT_LN2;
+	// sleep(2);
+	// if (csi_service_stop(reason) == CSIFW_ERROR) {
+	// 	printf("[APP]: CSI Manager STOP FAIL\n");
+	// 	PRNT_LN2;
+	// 	return 0;
+	// }
+	// printf("[APP]: SLEEP--> 10 seconds\n");
+	// PRNT_LN2;
+	// sleep(10);
 
-	PRNT_LN3;
-	printf("[APP]: csi_service_deinit\n");
-	PRNT_LN2;
-	sleep(2);
-	if (csi_service_deinit() == CSIFW_ERROR) {
-		printf("[APP]: CSI Manager DEINIT FAIL\n");
-		PRNT_LN2;
-		return 0;
-	}
-	printf("[APP]: SLEEP--> 20 seconds\n");
-	PRNT_LN2;
-	sleep(20);
-	PRNT_LN2;
-	printf("[APP]: DEFAULT FLOW ENDSSS\n");
-	printf("[APP]: DEFAULT FLOW ENDSSS\n");
+	// PRNT_LN3;
+	// printf("[APP]: csi_service_deinit\n");
+	// PRNT_LN2;
+	// sleep(2);
+	// if (csi_service_deinit() == CSIFW_ERROR) {
+	// 	printf("[APP]: CSI Manager DEINIT FAIL\n");
+	// 	PRNT_LN2;
+	// 	return 0;
+	// }
+	// printf("[APP]: SLEEP--> 20 seconds\n");
+	// PRNT_LN2;
+	// sleep(20);
+	// PRNT_LN2;
+	// printf("[APP]: DEFAULT FLOW ENDSSS\n");
+	// printf("[APP]: DEFAULT FLOW ENDSSS\n");
 	
 	return 0;
 }
