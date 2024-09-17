@@ -8,19 +8,14 @@
 #define BUFFER_SIZE 1024
 #define FILENAME "received_data.txt"
 FILE* file;
-typedef unsigned long long u64;
 int stop = 0;
 
 static void print_buf(const unsigned char* buf, int len)
 {
-	printf("\nRAW DATA: %d\n", len);
-    fprintf(file,"\nRAW DATA: %d\n", len);
-	unsigned long long *buff_tmp = (u64 *)buf;
-	int buff_len = (len/8) + 1;
-	for (int i = 0; i < buff_len; i++) {
-		printf("[%02d]0x%016llx\n", i, buff_tmp[i]);
-        fprintf(file, "[%02d]0x%016llx\n", i, buff_tmp[i]);
+    for (int i = 0; i < len; i++){
+        fprintf(file, "%02x", buf[i]);
     }
+    fprintf(file, "\n");
 }
 
 void* receive_data(void* sockfd_ptr) {
