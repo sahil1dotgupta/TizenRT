@@ -163,7 +163,7 @@ static int rtk_wifi_csi_ioctl(FAR struct wifi_csi_lowerhalf_s *dev, int cmd, uns
 	break;
 
 	case CSIIOC_REGISTER_CALLBACK: {
-		csivdbg("CSIIOC_REGISTER_CALLBACK\n");
+		csidbg("CSIIOC_REGISTER_CALLBACK )) [%d]\n", WIFI_EVENT_CSI_DONE);
 		rtk_wifi_csi_takesem(&priv->devsem);
 		wifi_reg_event_handler(WIFI_EVENT_CSI_DONE, data_ready_listener, dev);
 		rtk_wifi_csi_givesem(&priv->devsem);

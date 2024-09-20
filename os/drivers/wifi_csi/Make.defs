@@ -57,6 +57,10 @@ ifeq ($(CONFIG_WIFI_CSI),y)
 CSRCS += wifi_csi.c
 
 ifeq ($(CONFIG_WIFI_CSI_RTL8730E),y)
+CFLAGS += -I $(TOPDIR)/board/rtl8730e/src/component/wifi
+CFLAGS += -I $(TOPDIR)/board/rtl8730e/src/component/wifi/driver/include
+CFLAGS += -I $(TOPDIR)/board/rtl8730e/src/component/os_dep
+CFLAGS += -I $(TOPDIR)/board/rtl8730e/include
 CSRCS += rtk_wifi_csi.c
 endif
 

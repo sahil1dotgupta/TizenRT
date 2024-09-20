@@ -19,7 +19,10 @@
 #define __DRIVERS_WIFI_CSI_RTK8730E
 
 #include <tinyara/wifi_csi/wifi_csi.h>
-#include "wifi/wifi_conf.h"
+// #include "wifi_conf.h"
+// #include "../../board/rtl8730e/src/component/wifi/api/wifi_conf.h"
+#include "api/wifi_conf.h"
+// 
 #include <semaphore.h>
 // #include <queue.h>
 
