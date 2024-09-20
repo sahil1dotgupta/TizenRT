@@ -1,0 +1,61 @@
+menu "CSI Driver Support"
+
+menuconfig WIFI_CSI
+	bool "CSI Support"
+	default n
+	---help---
+		Enable support for WIFI CSI driver.
+
+if WIFI_CSI
+
+config WIFICSI_CUSTOM_DEV_PATH
+	string "Use custom device path"
+	default "/dev/wificsi"
+
+if WIFICSI_CUSTOM_DEV_PATH
+
+config WIFICSI_DEV_ROOT
+	bool "Place wificsi devices in /dev"
+	default n
+	---help---
+		This option causes all device entries to appear in /dev with all the
+		other device entries.  This option generates the smallest code and
+		RAM footprint.
+
+if !WIFICSI_DEV_ROOT
+
+config WIFICSI_DEV_PATH
+	string "Base path for Wifi csi devices"
+	default "/dev/wificsi"
+	---help---
+		The path on the target where wificsi devices are registered.  The default
+		is to place all wificsi devices in the /dev/wificsi/ directory.
+endif
+endif
+
+
+comment "CSI Devices"
+
+choice
+	prompt "Choose CSI device"
+	default WIFI_CSI_RTL8730E
+	---help---
+		WIFI_CSI_RTL8730E for aidual chip
+		/* Will support more in future like shown below */
+		/* WIFI_CSI_RTL8721CSM for tp1x chip */
+
+
+config WIFI_CSI_RTL8730E
+	bool "WIFI_CSI_RTL8730E Driver"
+	---help---
+		Enable CSI Driver, WIFI_CSI_RTL8730E.
+
+# config LCD_ST7701SN
+# 	bool "ST7701SN LCD Driver"
+# 	---help---
+# 		Enable LCD Driver, ST7701SN with mipi.
+endchoice
+
+endif # WIFI_CSI
+endmenu
+

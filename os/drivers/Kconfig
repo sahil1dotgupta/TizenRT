@@ -282,40 +282,41 @@ if DRIVERS_VIDEO
 source drivers/video/Kconfig
 endif # DRIVERS_VIDEO
 
-menuconfig WIFI_CSI
-	bool "CSI Support"
-	default n
-	---help---
-		Enable support for WIFI CSI driver.
+source drivers/wifi_csi/Kconfig
+# menuconfig WIFI_CSI
+# 	bool "CSI Support"
+# 	default n
+# 	---help---
+# 		Enable support for WIFI CSI driver.
 
-if WIFI_CSI
+# if WIFI_CSI
 
-config WIFICSI_CUSTOM_DEV_PATH
-	string "Use custom device path"
-	default "/dev/wificsi"
+# config WIFICSI_CUSTOM_DEV_PATH
+# 	string "Use custom device path"
+# 	default "/dev/wificsi"
 
-if WIFICSI_CUSTOM_DEV_PATH
+# if WIFICSI_CUSTOM_DEV_PATH
 
-config WIFICSI_DEV_ROOT
-	bool "Place wificsi devices in /dev"
-	default n
-	---help---
-		This option causes all device entries to appear in /dev with all the
-		other device entries.  This option generates the smallest code and
-		RAM footprint.
+# config WIFICSI_DEV_ROOT
+# 	bool "Place wificsi devices in /dev"
+# 	default n
+# 	---help---
+# 		This option causes all device entries to appear in /dev with all the
+# 		other device entries.  This option generates the smallest code and
+# 		RAM footprint.
 
-if !WIFICSI_DEV_ROOT
+# if !WIFICSI_DEV_ROOT
 
-config WIFICSI_DEV_PATH
-	string "Base path for Wifi csi devices"
-	default "/dev/wificsi"
-	---help---
-		The path on the target where wificsi devices are registered.  The default
-		is to place all wificsi devices in the /dev/wificsi/ directory.
+# config WIFICSI_DEV_PATH
+# 	string "Base path for Wifi csi devices"
+# 	default "/dev/wificsi"
+# 	---help---
+# 		The path on the target where wificsi devices are registered.  The default
+# 		is to place all wificsi devices in the /dev/wificsi/ directory.
 
-endif
-endif
-endif # WIFI_CSI
+# endif
+# endif
+# endif # WIFI_CSI
 
 menu "AI SoC devices"
 source drivers/ai-soc/Kconfig
